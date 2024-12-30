@@ -1,7 +1,7 @@
 # BookStoreApp
 
 ## Overview
-BookStoreApp is a web application being developed using ASP.NET. The primary goal of this project is to create a comprehensive platform for managing and purchasing books. While the project is still in progress, significant steps have been taken towards building its core functionality.
+BookStoreApp is a web application being developed using ASP.NET and Angular. The primary goal of this project is to create a comprehensive platform for managing and purchasing books. While the project is still in progress, significant steps have been taken towards building its core functionality.
 
 ## Current Features
 1. **User Interface:**
@@ -19,11 +19,19 @@ BookStoreApp is a web application being developed using ASP.NET. The primary goa
 4. **Authentication System:**
    - Basic login and registration features are partially implemented.
 
+5. **API Integration:**
+   - APIs are used to connect the front-end with the back-end seamlessly.
+
+6. **Entity Framework:**
+   - Entity Framework is utilized for database operations, enabling efficient ORM functionality.
+
 ## Technologies Used
 - **Framework:** ASP.NET
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** AngularJS
 - **Backend:** C#
 - **Database:** SQL Server
+- **ORM:** Entity Framework
+- **API:** RESTful APIs
 
 ## To-Do List
 1. **Complete User Authentication:**
@@ -53,7 +61,7 @@ BookStoreApp is a web application being developed using ASP.NET. The primary goa
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/BookStoreApp.git
+   git clone https://github.com/edonberishaa/BookStoreApp
    ```
 2. Open the project in Visual Studio.
 3. Restore NuGet packages.
@@ -69,7 +77,10 @@ This project is under development and is not yet complete. The features mentione
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+The project is not completed yet!
+
+Edon Berisha
 ---
 
 Stay tuned for updates as development progresses!
-Edon Berisha 
+
