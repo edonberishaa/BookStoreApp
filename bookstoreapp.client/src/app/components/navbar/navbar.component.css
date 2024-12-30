@@ -1,0 +1,28 @@
+.form-search {
+  position: relative;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  padding: 10px;
+}
+
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+
+.dropdown-menu {
+  position: absolute !important;
+  top: 100%; /* Ensures it appears below the input field */
+  left: 0;
+  z-index: 1050; /* Ensures it stays on top of other elements */
+  display: block; /* Ensures it's visible */
+  max-height: 200px; /* Prevents it from overflowing */
+  overflow-y: auto; /* Adds scroll if content overflows */
+}
+
+.navbar {
+  position: relative; /* Ensures the dropdown is positioned relative to the navbar */
+  z-index: 1000; /* Keeps navbar above background content */
+  overflow: visible !important;
+}

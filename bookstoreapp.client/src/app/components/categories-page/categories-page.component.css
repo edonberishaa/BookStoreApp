@@ -1,0 +1,56 @@
+.get-in-touch {
+  padding: 20px;
+  max-width: 600px;
+  margin: 3% auto 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form fields */
+.form-field {
+  margin-bottom: 20px; /* Add vertical space between each form field */
+  position: relative;
+}
+
+/* Style the inputs for better visuals */
+.input-text {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+.submit-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+
+/* Style error messages */
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: -18px;
+}
+
+.form-error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+}

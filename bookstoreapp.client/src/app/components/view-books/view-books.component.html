@@ -1,0 +1,28 @@
+<div class="container py-5">
+
+  <div class="row align-items-center py-4 mb-5 d-flex justify-content-center">
+    <div class="col-md-6">
+      <h2 class="fw-bold text-primary">Extraordinary Books You Should Buy!</h2>
+      <p class="text-muted">
+        These books are essential for anyone looking to master programming concepts, design patterns, and best practices.
+        A comprehensive guide for beginners and experts alike.
+      </p>
+    </div>
+  </div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let book of books" class="col">
+      <div class="card h-100 shadow-sm" (click)="viewBookDetails(book.id)" tabindex="0">
+        <img [src]="book.imagePath || 'assets/placeholder.jpg'"
+             class="card-img-top"
+             alt="{{book.title}} by {{book.author}}"
+             style="height: 250px;object-fit: contain; padding:1rem">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{book.title}} by {{book.author}}</h5>
+          <p class="card-text text-secondary mb-2">Price: <strong>${{book.price}}</strong></p>
+          <p class="card-text text-secondary mb-2">ISBN: {{book.isbn}}</p>
+          <p class="card-text text-secondary">Published Date: {{book.publishedDate | date:'longDate'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

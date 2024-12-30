@@ -1,0 +1,69 @@
+<main class="form-signin w-100 m-auto">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 fw-normal mt-5">Please sign in</h1>
+
+    <!-- Email Field -->
+    <div class="form-floating mb-2">
+      <input type="email"
+             class="form-control"
+             id="floatingInput"
+             placeholder="name@example.com"
+             [(ngModel)]="loginData.email"
+             name="email"
+             #email="ngModel"
+             required
+             email />
+      <label for="floatingInput">Email address</label>
+      <div *ngIf="email.invalid && email.touched" class="text-danger">
+        Email address is required and must be valid.
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-floating">
+      <input [type]="passwordFieldType"
+             class="form-control"
+             id="floatingPassword"
+             placeholder="Password"
+             [(ngModel)]="loginData.password"
+             name="password"
+             #password="ngModel"
+             required
+             minlength="5" />
+      <label for="floatingPassword">Password</label>
+      <div *ngIf="password.invalid && password.touched" class="text-danger">
+        Password must be at least 5 characters long.
+      </div>
+      <button type="button" class="btn btn-link" (click)="togglePasswordVisibility()">
+        Show/Hide
+      </button>
+    </div>
+
+    <!-- Remember Me -->
+    <div class="form-check text-start my-3">
+      <input class="form-check-input"
+             type="checkbox"
+             value="remember-me"
+             id="flexCheckDefault"
+             [(ngModel)]="loginData.rememberMe"
+             name="rememberMe" />
+      <label class="form-check-label" for="flexCheckDefault">
+        Remember me
+      </label>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn btn-primary w-100 py-2"
+            type="submit"
+            [disabled]="loginForm.invalid">
+      Sign in
+    </button>
+
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
+  </form>
+</main>

@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <div class="card shadow border-0">
+    <div class="card-header bg-light text-dark text-center">
+      <h2 class="mb-0">
+        <i class="bi bi-cart-fill text-secondary"></i> Purchase Book
+      </h2>
+    </div>
+    <div class="card-body">
+      <!-- Book Info -->
+      <div class="mb-4 p-3 bg-light rounded">
+        <h5 class="mb-2">
+          <strong><i class="bi bi-book text-secondary"></i> Book Title:</strong> {{ book?.title }}
+        </h5>
+        <p class="mb-2">
+          <strong><i class="bi bi-book text-secondary"></i> Book ID:</strong> {{ book?.id }}
+        </p>
+        <p class="mb-0">
+          <strong><i class="bi bi-currency-dollar text-secondary"></i> Price:</strong> ${{ book?.price }}
+        </p>
+      </div>
+
+      <!--<app-costumer-input></app-costumer-input>-->
+      <!-- Order Form -->
+      <form [formGroup]="orderForm" (ngSubmit)="addOrderDetail()" class="mb-4">
+        <div class="mb-3">
+          <label for="quantity" class="form-label">
+            <i class="bi bi-123 text-secondary"></i> Quantity:
+          </label>
+          <input type="number"
+                 id="quantity"
+                 formControlName="quantity"
+                 class="form-control border-secondary"
+                 placeholder="Enter quantity">
+        </div>
+
+        <div class="mb-3">
+          <label for="costumerId" class="form-label">
+            <i class="bi bi-person text-secondary"></i> Customer ID:
+          </label>
+          <input type="number"
+                 id="costumerId"
+                 formControlName="costumerId"
+                 class="form-control border-secondary"
+                 placeholder="Enter Customer ID">
+        </div>
+
+        <button type="submit" class="btn btn-secondary w-100">
+          <i class="bi bi-cart-plus"></i> Add to Order
+        </button>
+      </form>
+
+      <!-- Order Details -->
+      <h3 class="mt-5 border-bottom pb-2 text-secondary">
+        <i class="bi bi-list-ul"></i> Order Details
+      </h3>
+      <ul class="list-group mt-3">
+        <li *ngFor="let detail of orderDetails; let i = index"
+            class="list-group-item d-flex justify-content-between align-items-center border-secondary">
+          <div>
+            <span><i class="bi bi-book text-secondary"></i> Book ID: {{ detail.bookId }}</span>
+            <span class="ms-3"><i class="bi bi-basket-fill text-secondary"></i> Quantity: {{ detail.quantity }}</span>
+            <span class="ms-3"><i class="bi bi-cash-stack text-secondary"></i> Price: ${{ detail.price }}</span>
+          </div>
+          <button (click)="deleteOrderDetail(i)" class="btn btn-outline-danger btn-sm" title="Remove Order">
+            <i class="bi bi-x"></i>
+          </button>
+        </li>
+      </ul>
+
+      <button (click)="submitOrder()" class="btn btn-success w-100 mt-4">
+        <i class="bi bi-check-circle-fill"></i> Submit Order
+      </button>
+    </div>
+  </div>
+</div>
